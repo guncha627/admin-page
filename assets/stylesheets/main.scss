@@ -1,0 +1,22 @@
+// pages
+@import './pages/index';
+@import './pages/login';
+@import './pages/main-page';
+@import './pages/add_invoice';
+@import './pages/invoice_list';
+@import './pages/add_product';
+@import './pages/product_list';
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    max-width: 1440px;
+    margin: 0 auto;
+    scroll-behavior: smooth;
+  }
+  

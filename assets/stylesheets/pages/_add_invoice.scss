@@ -1,0 +1,345 @@
+#add-invoice {
+  // display: none;
+  height: 100vh;
+  max-height: 1024px;
+  position: relative;
+  #inv_bcgr {
+    position: absolute;
+    z-index: -1;
+    width: 1100px;
+    height: 600px;
+    right: 0;
+    top: 20px;
+    opacity: 0.1;
+  }
+  .header {
+    background: #b3f263;
+    height: 35px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+  }
+  .inv-info {
+    height: 130px;
+    margin: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    .left {
+      width: 350px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 20px;
+      label {
+        width: 150px;
+        font-family: 'Inria Serif';
+        font-size: 18px;
+        line-height: 24px;
+        color: #472f01;
+      }
+      input {
+        width: 200px;
+        height: 25px;
+        left: 165px;
+        top: 1px;
+        border: 1px solid #93ed21;
+        border-radius: 5px;
+        margin: 3px 0;
+      }
+      #inv_date {
+        color: transparent;
+        &::-webkit-calendar-picker-indicator {
+          display: none;
+          -webkit-appearance: none;
+        }
+      }
+      #inv_time {
+        width: 100px;
+        margin-right: 50px;
+        color: transparent;
+        &::-webkit-calendar-picker-indicator {
+          display: none;
+          -webkit-appearance: none;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      .action {
+        width: 400px;
+        height: 35px;
+        display: flex;
+        justify-content: flex-end;
+        label {
+          margin: 0 10px 5px 0;
+          font-family: 'Inria Serif';
+          font-size: 18px;
+          line-height: 24px;
+          color: #472f01;
+        }
+        select {
+          width: 200px;
+          height: 25px;
+          top: 1px;
+          border: 1px solid #93ed21;
+          border-radius: 5px;
+          margin: 3px 0;
+        }
+      }
+    }
+  }
+  .inv-list {
+    border: 1px solid #93ed21;
+    margin: 0 20px;
+    height: 350px;
+    table {
+      border-collapse: collapse;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      tr {
+        th {
+          background: rgba(147, 237, 33, 0.7);
+          border-right: 1px solid #7cb417;
+          border: 1px solid #7cb417;
+          height: 30px;
+          padding: 8px;
+          font-family: 'Inria Serif';
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 24px;
+          color: #472f01;
+        }
+        #th1 {
+          width: 66px;
+        }
+        #th2 {
+          width: 160px;
+        }
+        #th3 {
+          width: 640px;
+        }
+        #th4 {
+          width: 170px;
+        }
+        #th5 {
+          width: 190px;
+        }
+        #th6 {
+          width: 170px;
+        }
+        #th7 {
+          width: 171px;
+          border-right: none;
+        }
+        .center {
+          text-align: center;
+        }
+        .end {
+          text-align: right;
+        }
+        .end:last-child {
+          border-right: none;
+        }
+        td {
+          border-right: 1px solid #7cb417;
+          padding: 8px;
+          font-family: 'Inria Serif';
+          font-size: 18px;
+          line-height: 24px;
+          color: #472f01;
+          input {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+  .inv-sub {
+    margin-right: 20px;
+    height: 150px;
+    width: 320px;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      label {
+        height: 20px;
+        margin: 8px 10px;
+        font-family: 'Inria Serif';
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        color: #472f01;
+      }
+      input {
+        width: 200px;
+        height: 26px;
+        border: 1px solid #b3f263;
+        border-radius: 5px;
+        margin: 5px 0;
+      }
+    }
+  }
+  .buttons {
+    margin-top: 20px;
+    width: 230px;
+    margin-left: 40px;
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    button {
+      border: 1px solid #93ed21;
+      border-radius: 5px;
+      background-color: transparent;
+      width: 112px;
+      height: 35px;
+      font-family: 'Inria Serif';
+      font-size: 16px;
+      line-height: 16px;
+      color: #472f01;
+    }
+    a {
+      button {
+        border: 1px solid #93ed21;
+        border-radius: 5px;
+        background-color: transparent;
+        width: 112px;
+        height: 35px;
+        font-family: 'Inria Serif';
+        font-size: 16px;
+        line-height: 16px;
+        color: #472f01;
+      }
+    }
+  }
+  #save_inv {
+    // display: none;
+    position: absolute;
+    width: 480px;
+    height: 207px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    .header {
+      width: 480px;
+      height: 40px;
+      background: #93ed21;
+      border-radius: 10px 10px 0px 0px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 35px;
+      p {
+        font-family: 'Inria Serif';
+        font-size: 20px;
+        line-height: 24px;
+        color: #472f01;
+      }
+      .buttons {
+        margin-top: 35px;
+        // background-color: red;
+        width: 350px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        right: 65px;
+        bottom: 40px;
+        a {
+          button {
+            background: #ffffff;
+            width: 102px;
+            height: 30px;
+            border: 1px solid #93ed21;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 5px;
+            font-family: 'Inria Serif';
+            font-size: 15px;
+            line-height: 18px;
+            color: #472f01;
+          }
+        }
+        button {
+          background: #ffffff;
+          width: 102px;
+          height: 30px;
+          border: 1px solid #93ed21;
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          border-radius: 5px;
+          font-family: 'Inria Serif';
+          font-size: 15px;
+          line-height: 18px;
+          color: #472f01;
+        }
+      }
+    }
+  }
+  .footer {
+    height: 40px;
+    width: 1440px;
+    position: absolute;
+    bottom: 0;
+    background: #b3f263;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .inv-num {
+      position: absolute;
+      height: 55.68px;
+      width: 330.23px;
+      left: 0;
+      bottom: 0px;
+      background: #93ed21;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 0 50px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      #invoice {
+        font-family: 'Inria Serif';
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        color: #472f01;
+      }
+      #id_num {
+        font-family: 'Inria Serif';
+        font-size: 20px;
+        line-height: 24px;
+        color: #472f01;
+      }
+    }
+    .outer-container {
+      width: 1100px;
+      margin: 6px 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .icons {
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        img {
+          width: 20px;
+          height: 20px;
+          margin: 0 8px;
+        }
+      }
+      img {
+        height: 29px;
+        width: 50px;
+      }
+    }
+  }
+}
+
